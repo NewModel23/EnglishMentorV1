@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EnglishMentorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CatalogoPerfiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Perioricidad" Type="varchar" MaxLength="200" />
+          <Property Name="FechaActualizacion" Type="date" />
+          <Property Name="UsuarioActualiza" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TipoPerfil" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Nombre2" Type="varchar" MaxLength="200" />
+          <Property Name="ApellidoP" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ApellidoM" Type="varchar" MaxLength="200" />
+          <Property Name="Telefono1" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Telefono2" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CodigoPostal" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Calle" Type="varchar" MaxLength="200" />
+          <Property Name="Colonia" Type="varchar" MaxLength="200" />
+          <Property Name="DelegacionMunicipio" Type="varchar" MaxLength="200" />
+          <Property Name="Estado" Type="varchar" MaxLength="200" />
+          <Property Name="Pais" Type="varchar" MaxLength="50" />
+          <Property Name="TipoPerfil" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CodigoPromo" Type="varchar" MaxLength="200" />
+          <Property Name="FechaIngreso" Type="date" Nullable="false" />
+          <Property Name="FechaBaja" Type="date" />
+          <Property Name="ConteoReferenciados" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="FechaActualizacion" Type="date" />
+          <Property Name="UsuarioActualiza" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PrecioPerfiles">
+          <Key>
+            <PropertyRef Name="IdPerfil" />
+          </Key>
+          <Property Name="IdPerfil" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Perioricidad" Type="varchar" MaxLength="200" />
+          <Property Name="PrecioNormal" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Iva" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PrecioFinal" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DescuentoMaximoReferenciaPCT" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="DescuentoMaximoReferencia" Type="numeric" Precision="20" Scale="0" />
+          <Property Name="DescuentoReferencia1PCT" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia2PCT" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia3PCT" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia4PCT" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia1" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia2" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia3" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia4" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="ComisionSistemasPCT" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ComisionSistemas" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ImpuestoSistemas" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ComisionDespImpuestoSistemas" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ComisionInstructorPCT" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ComisionInstructor" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ImpuestoInstructor" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ComisionDespImpuestoInstructor" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ComisionVendedorPCT" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ComisionVendedor" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ImpuestoVendedor" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ComisionDespImpuestoVendedor" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="GananciaNeta" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="FechaActualizacion" Type="date" />
+          <Property Name="UsuarioActualiza" Type="varchar" MaxLength="200" />
+          <Property Name="Status" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EnglishMentorModelStoreContainer">
+          <EntitySet Name="CatalogoPerfiles" EntityType="Self.CatalogoPerfiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrecioPerfiles" EntityType="Self.PrecioPerfiles" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EnglishMentorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CatalogoPerfile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Perioricidad" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FechaActualizacion" Type="DateTime" Precision="0" />
+          <Property Name="UsuarioActualiza" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TipoPerfil" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ApellidoP" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApellidoM" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono1" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Telefono2" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CodigoPostal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Calle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Colonia" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DelegacionMunicipio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TipoPerfil" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="CodigoPromo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="0" />
+          <Property Name="ConteoReferenciados" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FechaActualizacion" Type="DateTime" Precision="0" />
+          <Property Name="UsuarioActualiza" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PrecioPerfile">
+          <Key>
+            <PropertyRef Name="IdPerfil" />
+          </Key>
+          <Property Name="IdPerfil" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Perioricidad" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PrecioNormal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Iva" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="PrecioFinal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="DescuentoMaximoReferenciaPCT" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="DescuentoMaximoReferencia" Type="Decimal" Precision="20" Scale="0" />
+          <Property Name="DescuentoReferencia1PCT" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia2PCT" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia3PCT" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia4PCT" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia1" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia2" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia3" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="DescuentoReferencia4" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="ComisionSistemasPCT" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ComisionSistemas" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ImpuestoSistemas" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ComisionDespImpuestoSistemas" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ComisionInstructorPCT" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ComisionInstructor" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ImpuestoInstructor" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ComisionDespImpuestoInstructor" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ComisionVendedorPCT" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ComisionVendedor" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ImpuestoVendedor" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ComisionDespImpuestoVendedor" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GananciaNeta" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FechaActualizacion" Type="DateTime" Precision="0" />
+          <Property Name="UsuarioActualiza" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EnglishMentorEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CatalogoPerfiles" EntityType="Self.CatalogoPerfile" />
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+          <EntitySet Name="PrecioPerfiles" EntityType="Self.PrecioPerfile" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EnglishMentorModelStoreContainer" CdmEntityContainer="EnglishMentorEntities">
+          <EntitySetMapping Name="CatalogoPerfiles">
+            <EntityTypeMapping TypeName="EnglishMentorModel.CatalogoPerfile">
+              <MappingFragment StoreEntitySet="CatalogoPerfiles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Perioricidad" ColumnName="Perioricidad" />
+                <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+                <ScalarProperty Name="UsuarioActualiza" ColumnName="UsuarioActualiza" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="EnglishMentorModel.Cliente">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Nombre2" ColumnName="Nombre2" />
+                <ScalarProperty Name="ApellidoP" ColumnName="ApellidoP" />
+                <ScalarProperty Name="ApellidoM" ColumnName="ApellidoM" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Calle" ColumnName="Calle" />
+                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+                <ScalarProperty Name="DelegacionMunicipio" ColumnName="DelegacionMunicipio" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="TipoPerfil" ColumnName="TipoPerfil" />
+                <ScalarProperty Name="CodigoPromo" ColumnName="CodigoPromo" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="ConteoReferenciados" ColumnName="ConteoReferenciados" />
+                <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+                <ScalarProperty Name="UsuarioActualiza" ColumnName="UsuarioActualiza" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrecioPerfiles">
+            <EntityTypeMapping TypeName="EnglishMentorModel.PrecioPerfile">
+              <MappingFragment StoreEntitySet="PrecioPerfiles">
+                <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+                <ScalarProperty Name="Perioricidad" ColumnName="Perioricidad" />
+                <ScalarProperty Name="PrecioNormal" ColumnName="PrecioNormal" />
+                <ScalarProperty Name="Iva" ColumnName="Iva" />
+                <ScalarProperty Name="PrecioFinal" ColumnName="PrecioFinal" />
+                <ScalarProperty Name="DescuentoMaximoReferenciaPCT" ColumnName="DescuentoMaximoReferenciaPCT" />
+                <ScalarProperty Name="DescuentoMaximoReferencia" ColumnName="DescuentoMaximoReferencia" />
+                <ScalarProperty Name="DescuentoReferencia1PCT" ColumnName="DescuentoReferencia1PCT" />
+                <ScalarProperty Name="DescuentoReferencia2PCT" ColumnName="DescuentoReferencia2PCT" />
+                <ScalarProperty Name="DescuentoReferencia3PCT" ColumnName="DescuentoReferencia3PCT" />
+                <ScalarProperty Name="DescuentoReferencia4PCT" ColumnName="DescuentoReferencia4PCT" />
+                <ScalarProperty Name="DescuentoReferencia1" ColumnName="DescuentoReferencia1" />
+                <ScalarProperty Name="DescuentoReferencia2" ColumnName="DescuentoReferencia2" />
+                <ScalarProperty Name="DescuentoReferencia3" ColumnName="DescuentoReferencia3" />
+                <ScalarProperty Name="DescuentoReferencia4" ColumnName="DescuentoReferencia4" />
+                <ScalarProperty Name="ComisionSistemasPCT" ColumnName="ComisionSistemasPCT" />
+                <ScalarProperty Name="ComisionSistemas" ColumnName="ComisionSistemas" />
+                <ScalarProperty Name="ImpuestoSistemas" ColumnName="ImpuestoSistemas" />
+                <ScalarProperty Name="ComisionDespImpuestoSistemas" ColumnName="ComisionDespImpuestoSistemas" />
+                <ScalarProperty Name="ComisionInstructorPCT" ColumnName="ComisionInstructorPCT" />
+                <ScalarProperty Name="ComisionInstructor" ColumnName="ComisionInstructor" />
+                <ScalarProperty Name="ImpuestoInstructor" ColumnName="ImpuestoInstructor" />
+                <ScalarProperty Name="ComisionDespImpuestoInstructor" ColumnName="ComisionDespImpuestoInstructor" />
+                <ScalarProperty Name="ComisionVendedorPCT" ColumnName="ComisionVendedorPCT" />
+                <ScalarProperty Name="ComisionVendedor" ColumnName="ComisionVendedor" />
+                <ScalarProperty Name="ImpuestoVendedor" ColumnName="ImpuestoVendedor" />
+                <ScalarProperty Name="ComisionDespImpuestoVendedor" ColumnName="ComisionDespImpuestoVendedor" />
+                <ScalarProperty Name="GananciaNeta" ColumnName="GananciaNeta" />
+                <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+                <ScalarProperty Name="UsuarioActualiza" ColumnName="UsuarioActualiza" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

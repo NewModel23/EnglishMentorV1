@@ -1,0 +1,170 @@
+﻿@model EMWebApi.Models.Custumer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Custumer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoPostal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoPostal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Colonia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Colonia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DelegacionMunicipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DelegacionMunicipio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoPerfil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoPerfil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoPromo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoPromo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaIngreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaBaja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaBaja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaActualizacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaActualizacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuarioctualiza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuarioctualiza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
