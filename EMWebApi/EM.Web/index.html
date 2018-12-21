@@ -1,10 +1,19 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="EM">
 <head>
     <title></title>
 	<meta charset="utf-8" />
 </head>
-<body ng-app="EM">
+<body>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="Scripts/angular-ui-router.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/clients/module.js"></script>
+    <script src="app/clients/service.js"></script>
+    <script src="app/clients/controllers/clientsController.js"></script>
+
+    <div ui-view></div>
 
 </body>
 </html>
